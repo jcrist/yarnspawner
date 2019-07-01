@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Configuration Options &#8212; yarnspawner 0.2.0+2.gd88b61a documentation</title>
+    <title>Configuration Options &#8212; yarnspawner 0.3.0+2.g4996476 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -35,11 +35,11 @@
 <h1>Configuration Options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="yarnspawner.YarnSpawner">
-<em class="property">class </em><code class="descclassname">yarnspawner.</code><code class="descname">YarnSpawner</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#yarnspawner.YarnSpawner" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">yarnspawner.</code><code class="sig-name descname">YarnSpawner</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#yarnspawner.YarnSpawner" title="Permalink to this definition">¶</a></dt>
 <dd><p>A spawner for starting singleuser instances in a YARN container.</p>
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.args = List('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.args = List('')</code></dt>
 <dd><p>Extra arguments to be passed to the single-user server.</p>
 <p>Some spawners allow shell-style expansion here, allowing you to use environment variables here.
 Most, including the default, do not. Consult the documentation for your spawner to verify!</p>
@@ -47,13 +47,13 @@ Most, including the default, do not. Consult the documentation for your spawner 
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.cmd = Command('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.cmd = Command('')</code></dt>
 <dd><p>The command used for starting the singleuser server.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.consecutive_failure_limit = Int(0)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.consecutive_failure_limit = Int(0)</code></dt>
 <dd><p>Maximum number of consecutive failures to allow before
 shutting down JupyterHub.</p>
 <p>This helps JupyterHub recover from a certain class of problem preventing launch
@@ -63,7 +63,7 @@ in contexts where the Hub is automatically restarted (e.g. systemd, docker, kube
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.cpu_guarantee = Float(None)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.cpu_guarantee = Float(None)</code></dt>
 <dd><p>Minimum number of cpu-cores a single-user notebook server is guaranteed to have available.</p>
 <p>If this value is set to 0.5, allows use of 50% of one CPU.
 If this value is set to 2, allows use of up to 2 CPUs.</p>
@@ -75,20 +75,20 @@ support for this setting for it to be enforced.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.cpu_limit = Int(1)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.cpu_limit = Int(1)</code></dt>
 <dd><p>Maximum number of cpu-cores a singleuser notebook server is allowed to
 use. Unlike other spawners, this must be an integer amount &gt;= 1.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.debug = Bool(False)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.debug = Bool(False)</code></dt>
 <dd><p>Enable debug-logging of the single-user server</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.default_url = Unicode('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.default_url = Unicode('')</code></dt>
 <dd><p>The URL the single-user server should start in.</p>
 <p><cite>{username}</cite> will be expanded to the user’s username</p>
 <p>Example uses:</p>
@@ -102,7 +102,7 @@ navigate the whole filesystem from their notebook server, but still start in the
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.disable_user_config = Bool(False)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.disable_user_config = Bool(False)</code></dt>
 <dd><p>Disable per-user configuration of single-user servers.</p>
 <p>When starting the user’s single-user server, any config file found in the user’s $HOME directory
 will be ignored.</p>
@@ -112,7 +112,7 @@ they have their own conda environments / virtualenvs / containers.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.env_keep = List('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.env_keep = List('')</code></dt>
 <dd><p>Whitelist of environment variables for the single-user server to inherit from the JupyterHub process.</p>
 <p>This whitelist is used to ensure that sensitive information in the JupyterHub process’s environment
 (such as <cite>CONFIGPROXY_AUTH_TOKEN</cite>) is not passed to the single-user server’s process.</p>
@@ -120,7 +120,7 @@ they have their own conda environments / virtualenvs / containers.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.environment = Dict('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.environment = Dict('')</code></dt>
 <dd><p>Extra environment variables to set for the single-user server’s process.</p>
 <dl class="simple">
 <dt>Environment variables that end up in the single-user server’s process come from 3 sources:</dt><dd><ul class="simple">
@@ -141,13 +141,13 @@ so if you are using the callable take care to verify it continues to work after 
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.epilogue = Unicode('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.epilogue = Unicode('')</code></dt>
 <dd><p>Script to run after singleuser server ends.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.http_timeout = Int(30)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.http_timeout = Int(30)</code></dt>
 <dd><p>Timeout (in seconds) before giving up on a spawned HTTP server</p>
 <p>Once a server has successfully been spawned, this is the amount of time
 we wait before assuming that the server is unable to accept
@@ -156,19 +156,19 @@ connections.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.ip = Unicode('0.0.0.0')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.ip = Unicode('0.0.0.0')</code></dt>
 <dd><p>The IP address (or hostname) the singleuser server should listen on.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.keytab = Unicode(None)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.keytab = Unicode(None)</code></dt>
 <dd><p>Path to kerberos keytab for JupyterHub user</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.localize_files = Dict('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.localize_files = Dict('')</code></dt>
 <dd><p>Extra files to distribute to the singleuser server container.</p>
 <p>This is a mapping from <code class="docutils literal notranslate"><span class="pre">local-name</span></code> to <code class="docutils literal notranslate"><span class="pre">resource</span></code>. Resource paths
 can be local, or in HDFS (prefix with <code class="docutils literal notranslate"><span class="pre">hdfs://...</span></code> if so). If an
@@ -193,7 +193,7 @@ configuring the following:</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.mem_guarantee = ByteSpecification(None)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.mem_guarantee = ByteSpecification(None)</code></dt>
 <dd><p>Minimum number of bytes a single-user notebook server is guaranteed to have available.</p>
 <dl class="simple">
 <dt>Allows the following suffixes:</dt><dd><ul class="simple">
@@ -212,7 +212,7 @@ support for this setting for it to be enforced.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.mem_limit = ByteSpecification('2 G')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.mem_limit = ByteSpecification('2 G')</code></dt>
 <dd><p>Maximum number of bytes a singleuser notebook server is allowed to
 use. Allows the following suffixes:</p>
 <ul class="simple">
@@ -225,7 +225,7 @@ use. Allows the following suffixes:</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.notebook_dir = Unicode('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.notebook_dir = Unicode('')</code></dt>
 <dd><p>Path to the notebook directory for the single-user server.</p>
 <p>The user sees a file listing of this directory when the notebook interface is started. The
 current interface does not easily allow browsing beyond the subdirectories in this directory’s
@@ -238,7 +238,7 @@ can do so with many other means.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.options_form = Union('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.options_form = Union('')</code></dt>
 <dd><p>An HTML form for options a user can specify on launching their server.</p>
 <p>The surrounding <cite>&lt;form&gt;</cite> element and the submit button are already provided.</p>
 <p>For example:</p>
@@ -262,7 +262,7 @@ so using this functionality might cause your JupyterHub upgrades to break.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.poll_interval = Int(30)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.poll_interval = Int(30)</code></dt>
 <dd><p>Interval (in seconds) on which to poll the spawner for single-user server’s status.</p>
 <p>At every poll interval, each spawner’s <cite>.poll</cite> method is called, which checks
 if the single-user server is still running. If it isn’t running, then JupyterHub modifies
@@ -271,7 +271,7 @@ its own state accordingly and removes appropriate routes from the configurable p
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.port = Int(0)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.port = Int(0)</code></dt>
 <dd><p>The port for single-user servers to listen on.</p>
 <p>Defaults to <cite>0</cite>, which uses a randomly allocated port number each time.</p>
 <p>If set to a non-zero value, all Spawners will use the same port,
@@ -282,7 +282,7 @@ e.g. in containers.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.post_stop_hook = Any(None)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.post_stop_hook = Any(None)</code></dt>
 <dd><p>An optional hook function that you can implement to do work after
 the spawner stops.</p>
 <p>This can be set independent of any concrete spawner implementation.</p>
@@ -290,10 +290,12 @@ the spawner stops.</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.pre_spawn_hook = Any(None)</code></dt>
-<dd><p>An optional hook function that you can implement to do some bootstrapping work before
-the spawner starts. For example, create a directory for your user or load initial content.</p>
+<code class="sig-name descname">config c.YarnSpawner.pre_spawn_hook = Any(None)</code></dt>
+<dd><p>An optional hook function that you can implement to do some
+bootstrapping work before the spawner starts. For example, create a
+directory for your user or load initial content.</p>
 <p>This can be set independent of any concrete spawner implementation.</p>
+<p>This maybe a coroutine.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">check_call</span>
 <span class="k">def</span> <span class="nf">my_hook</span><span class="p">(</span><span class="n">spawner</span><span class="p">):</span>
@@ -307,25 +309,25 @@ the spawner starts. For example, create a directory for your user or load initia
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.principal = Unicode(None)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.principal = Unicode(None)</code></dt>
 <dd><p>Kerberos principal for JupyterHub user</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.prologue = Unicode('')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.prologue = Unicode('')</code></dt>
 <dd><p>Script to run before singleuser server starts.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.queue = Unicode('default')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.queue = Unicode('default')</code></dt>
 <dd><p>The YARN queue to submit applications under</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.script_template = Unicode('{prologue}\n{singleuser_command}\n{epilogue}')</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.script_template = Unicode('{prologue}\n{singleuser_command}\n{epilogue}')</code></dt>
 <dd><p>Template for application script.</p>
 <p>Filled in by calling <code class="docutils literal notranslate"><span class="pre">script_template.format(**variables)</span></code>. Variables
 include the following attributes of this class:</p>
@@ -338,7 +340,21 @@ include the following attributes of this class:</p>
 
 <dl class="attribute">
 <dt>
-<code class="descname">config c.YarnSpawner.start_timeout = Int(300)</code></dt>
+<code class="sig-name descname">config c.YarnSpawner.ssl_alt_names = List('')</code></dt>
+<dd><p>List of SSL alt names</p>
+<p>May be set in config if all spawners should have the same value(s),
+or set at runtime by Spawner that know their names.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">config c.YarnSpawner.ssl_alt_names_include_local = Bool(True)</code></dt>
+<dd><p>Whether to include <a class="reference external" href="DNS:localhost">DNS:localhost</a>, IP:127.0.0.1 in alt names</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">config c.YarnSpawner.start_timeout = Int(300)</code></dt>
 <dd><p>Timeout (in seconds) before giving up on starting of singleuser server.</p>
 </dd></dl>
 
@@ -394,10 +410,10 @@ include the following attributes of this class:</p>
   Open an issue in the <a href="https://github.com/jcrist/yarnspawner/issues">issue tracker</a>.
 </p>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
